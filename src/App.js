@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
 
 function App() {
+  let age = 21
+  const [ userAge, setUserAge] = useState(0)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <h1> hi {userAge}</h1> */}
+      <button onClick={ ()=>setUserAge(userAge+1)}> +1 </button>
+      <button onClick={ ()=>setUserAge(userAge-1)}> -1 </button>
+      <button onClick={ ()=>setUserAge(userAge*2)}> *2 </button>
+      <button onClick={ ()=>setUserAge(userAge/2) }> /2 </button>
+
+      <span style={{fontSize:'1.5rem'}}>{userAge}</span>
+
     </div>
   );
 }
