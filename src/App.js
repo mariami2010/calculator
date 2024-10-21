@@ -1,20 +1,30 @@
 import { useState } from "react";
+import Calculator from "./components/calculator/calculator";
+import './App.css';
 
 function App() {
-  let age = 21
-  const [ userAge, setUserAge] = useState(0)
+ 
+  const[ calculatorVal,setCalculatorVal]= useState('')
   return (
     <div className="App">
-      {/* <h1> hi {userAge}</h1> */}
-      <button onClick={ ()=>setUserAge(userAge+1)}> +1 </button>
-      <button onClick={ ()=>setUserAge(userAge-1)}> -1 </button>
-      <button onClick={ ()=>setUserAge(userAge*2)}> *2 </button>
-      <button onClick={ ()=>setUserAge(userAge/2) }> /2 </button>
 
-      <span style={{fontSize:'1.5rem'}}>{userAge}</span>
+        <div>
+        <input 
+        type="text" 
+        value={calculatorVal} 
+        readOnly 
+        style={{ fontSize: '2rem', width: '300px', textAlign: 'right' }} // Optional styling
+      />
+        </div>
+
+    <Calculator calculatorVal={calculatorVal} setCalculatorVal={setCalculatorVal}/>
 
     </div>
   );
 }
 
-export default App;
+
+
+
+export default App
+
